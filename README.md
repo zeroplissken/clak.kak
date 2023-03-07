@@ -16,12 +16,12 @@ lisp REPL into a text editor.
 ## Usage
 Install like you would literally any other plugin for kakoune. Then you'll want to map some commands.
 I declare a usermode `sbcl` and toss everything in that inside a hook for lisp files.
-
-`bundle https://github.com/zeroplissken/clak.kak
+```
+bundle https://github.com/zeroplissken/clak.kak
 bundle-config clak.kak %{
-    hook global WinSetOption filetype=lisp %{
+   hook global WinSetOption filetype=lisp %{
         declare-user-mode sbcl
-		map buffer normal <a-s> ':select-expr<ret>'
+	map buffer normal <a-s> ':select-expr<ret>'
         map buffer sbcl -docstring 'start SBCL REPL' S ': sbcl-start<ret>'
         map buffer sbcl -docstring 'stop SBCL REPL and close terminal' Q ': sbcl-kill<ret>'
         map buffer sbcl -docstring 'send form under cursor to SBCL' l ': sbcl-send-expr<ret>'
@@ -30,8 +30,8 @@ bundle-config clak.kak %{
 
         map buffer normal -docstring 'SBCL mode' <a-l> ': enter-user-mode sbcl<ret>'
     }
-}`
-
+}
+```
 ## Commands
 
 - `sbcl-start`: starts the repl and loads the current file in SBCL
