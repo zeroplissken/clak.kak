@@ -2,6 +2,8 @@
 # a bunch of common lisp things #
 #################################
 
+declare-user-mode sbcl
+
 define-command -hidden send-newline-char %{
 	evaluate-commands -save-regs n %{
     	execute-keys -draft ge"ny
